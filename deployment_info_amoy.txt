@@ -1,0 +1,171 @@
+================================================================================
+DESPLIEGUE DE CONTRATOS EN POLYGON AMOY TESTNET
+================================================================================
+
+FECHA: 2025-12-08
+VERSIÓN: Contratos con correcciones de distribución de pagos a sponsors
+
+================================================================================
+DIRECCIONES DE CONTRATOS DESPLEGADOS
+================================================================================
+
+📍 DIRECCIONES PROXY (usar en frontend y transacciones):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Sponsors Contract:
+   Proxy:          0x537f0E3593693E41481d921C0a7546f12a2ca874
+   Implementation: 0xf41c8FFdbC13b6F672eb3332634c4BE6A59C8CFB
+   PolygonScan:    https://amoy.polygonscan.com/address/0x537f0E3593693E41481d921C0a7546f12a2ca874
+
+LotteryFactoryMiddleware Contract:
+   Proxy:          0x3c58A7fC3bfaC40Cc34BE02766D6E39f917ed0cb
+   Implementation: 0x850149e6FEe12Ce0E105490Ab37c1DCd51245fCb
+   PolygonScan:    https://amoy.polygonscan.com/address/0x3c58A7fC3bfaC40Cc34BE02766D6E39f917ed0cb
+
+LotteryFactory Contract:
+   Proxy:          0x971eD8Db6e6d002c38AEfF46F273e8f9961aA013
+   Implementation: 0x96A2c59f83b2200E150439435D37d5D028B4a755
+   PolygonScan:    https://amoy.polygonscan.com/address/0x971eD8Db6e6d002c38AEfF46F273e8f9961aA013
+
+
+================================================================================
+ESTADO DE VERIFICACIÓN EN POLYGONSCAN
+================================================================================
+
+✅ Sponsors:    VERIFICADO
+✅ Middleware:  VERIFICADO
+✅ Factory:     VERIFICADO
+
+Todos los contratos están verificados y el código fuente es visible en PolygonScan.
+
+
+================================================================================
+CORRECCIONES INCLUIDAS EN ESTE DESPLIEGUE
+================================================================================
+
+Este despliegue incluye las correcciones críticas en LotteryTemplate.sol:
+
+BUG #1 CORREGIDO: Cálculo incorrecto de porcentajes
+- ANTES: Modificaba _totalCost en cada iteración
+- AHORA: Usa _originalCost constante para calcular siempre 25%
+
+BUG #2 CORREGIDO: Permitía 3 sponsors en lugar de 2
+- ANTES: Loop de 0 a 3 (3 iteraciones)
+- AHORA: Loop de 1 a 3 (2 iteraciones, índices 1 y 2)
+
+BUG #3 CORREGIDO: No verificaba si el sponsor estaba activo
+- ANTES: Transfería a cualquier sponsor registrado
+- AHORA: Solo transfiere a sponsors activos
+
+
+================================================================================
+DISTRIBUCIÓN DE PAGOS (CORREGIDA)
+================================================================================
+
+Cuando un usuario compra boxes, la distribución es:
+
+CON 2 SPONSORS ACTIVOS:
+- Sponsor Directo:    25% del precio total
+- Sponsor Indirecto:  25% del precio total
+- Contrato Lotería:   50% del precio total
+
+CON 1 SPONSOR ACTIVO:
+- Sponsor Activo:     25% del precio total
+- Contrato Lotería:   75% del precio total
+
+SIN SPONSORS ACTIVOS:
+- Contrato Lotería:   100% del precio total
+
+
+================================================================================
+CONFIGURACIÓN DEL FRONTEND
+================================================================================
+
+El archivo frontend/src/app/services/web3.ts ha sido actualizado con las nuevas
+direcciones de contratos:
+
+export const CONTRACTS = {
+  MIDDLEWARE: '0x3c58A7fC3bfaC40Cc34BE02766D6E39f917ed0cb',
+  FACTORY: '0x971eD8Db6e6d002c38AEfF46F273e8f9961aA013',
+  SPONSORS: '0x537f0E3593693E41481d921C0a7546f12a2ca874',
+  TEMPLATE: '0x55b59889baB20D84FdB1D5f4aAd09e1B2aAc2985'
+};
+
+
+================================================================================
+INFORMACIÓN DE DESPLIEGUE
+================================================================================
+
+Red:               Polygon Amoy Testnet
+Chain ID:          80002
+Cuenta Deployer:   0x5B73375A952Ac9Ef19983f3D4F81263B67488C51
+Balance usado:     ~0.02 MATIC (gas fees)
+Timestamp:         2025-12-08 22:00:00 (aproximado)
+
+
+================================================================================
+COMANDOS ÚTILES
+================================================================================
+
+VERIFICAR CONTRATOS MANUALMENTE:
+npx hardhat verify --network polygon_amoy 0xf41c8FFdbC13b6F672eb3332634c4BE6A59C8CFB
+npx hardhat verify --network polygon_amoy 0x850149e6FEe12Ce0E105490Ab37c1DCd51245fCb
+npx hardhat verify --network polygon_amoy 0x96A2c59f83b2200E150439435D37d5D028B4a755
+
+EJECUTAR TESTS:
+npx hardhat test test/SponsorDistribution.test.js
+
+INICIAR FRONTEND:
+cd frontend
+npm start
+
+
+================================================================================
+PRÓXIMOS PASOS
+================================================================================
+
+1. ✅ Contratos desplegados
+2. ✅ Contratos verificados en PolygonScan
+3. ✅ Frontend actualizado con nuevas direcciones
+4. 🔄 Probar funcionalidad en el frontend:
+   - Conectar wallet
+   - Crear lotería de prueba
+   - Registrar usuarios con sponsors
+   - Comprar boxes y verificar distribución de pagos
+
+5. 📊 Monitorear transacciones en PolygonScan para confirmar distribución correcta
+
+
+================================================================================
+ENLACES IMPORTANTES
+================================================================================
+
+PolygonScan Amoy:
+https://amoy.polygonscan.com/
+
+Frontend Local:
+http://localhost:4200/
+
+Documentación de Correcciones:
+Ver archivo: escenarios_distribucion_sponsors.txt
+
+
+================================================================================
+NOTAS IMPORTANTES
+================================================================================
+
+⚠️ IMPORTANTE: Estos contratos están en la red de PRUEBA Amoy. No usar en mainnet
+sin pruebas exhaustivas adicionales.
+
+✅ Los contratos implementan las correcciones de distribución de pagos a sponsors
+que fueron verificadas con 6 tests automatizados exitosos.
+
+✅ La distribución de pagos ahora funciona correctamente con cualquier precio de
+box configurado en la lotería (1 USD, 10 USD, 100 USD, etc.).
+
+✅ Solo los sponsors ACTIVOS en una lotería específica reciben comisiones.
+
+
+================================================================================
+FIN DEL DOCUMENTO
+================================================================================

@@ -1,0 +1,23 @@
+Deploying contracts with the account: 0x7ad33A4078ef778e21d0311a6b0aFd3335061ae3
+Deploying Sponsors...
+Warning: A proxy admin was previously deployed on this network
+
+    This is not used with new transparent proxy deployments, since new transparent proxies deploy their own admins.
+    Changes to the previous admin will have no effect on this new proxy.
+
+Sponsors deployed to: 0x675366078666c9a082da0fd11f2762641ab4cD83
+Deploying LotteryFactoryMiddleware...
+Warning: A proxy admin was previously deployed on this network
+
+    This is not used with new transparent proxy deployments, since new transparent proxies deploy their own admins.
+    Changes to the previous admin will have no effect on this new proxy.
+
+ProviderError: insufficient funds for gas * price + value: balance 18289028517086803, tx cost 160992769409756080, overshot 142703740892669277
+    at HttpProvider.request (/Users/johancard/Downloads/Copia de lottery-main 3/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at HardhatEthersSigner.sendTransaction (/Users/johancard/Downloads/Copia de lottery-main 3/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at ContractFactory.deploy (/Users/johancard/Downloads/Copia de lottery-main 3/node_modules/ethers/src.ts/contract/factory.ts:111:24)
+    at ethersDeploy (/Users/johancard/Downloads/Copia de lottery-main 3/node_modules/@openzeppelin/hardhat-upgrades/src/utils/deploy.ts:36:28)
+    at deploy (/Users/johancard/Downloads/Copia de lottery-main 3/node_modules/@openzeppelin/hardhat-upgrades/src/utils/deploy.ts:28:12)
+    at Proxy.deployProxy (/Users/johancard/Downloads/Copia de lottery-main 3/node_modules/@openzeppelin/hardhat-upgrades/src/deploy-proxy.ts:108:11)
+    at main (/Users/johancard/Downloads/Copia de lottery-main 3/scripts/deploy_amoy.js:18:24)

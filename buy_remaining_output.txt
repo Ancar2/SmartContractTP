@@ -1,0 +1,26 @@
+Buying remaining boxes with account: 0x7ad33A4078ef778e21d0311a6b0aFd3335061ae3
+Initial Boxes Sold: 100
+Total Boxes: 500
+Remaining to buy: 400
+Tokens already approved.
+
+Buying batch of 100...
+Tx hash: 0x549312b363185ea3eea1277a357d29fb2cdcc60e800a7c0c40b1670da7f628a3
+Bought 100. Remaining to buy: 300
+Confirmed on-chain Boxes Sold: 200
+
+Buying batch of 100...
+Tx hash: 0x1abe95d656025727ec3cb59bd2079fd507587e0666aad3f42f12e8cc022151a8
+Bought 100. Remaining to buy: 200
+Confirmed on-chain Boxes Sold: 300
+
+Buying batch of 100...
+Tx hash: 0x92bd44451d3f3c1b1dccbcd3e73ddbfcc141f3c7326487043b0e73e55ad44adc
+Bought 100. Remaining to buy: 100
+Confirmed on-chain Boxes Sold: 400
+
+Buying batch of 100...
+Tx hash: 0xb0cda5177263102391f09aa333b454f773629a0a698cfce5749a0330bb5a8d39
+Bought 100. Remaining to buy: 0
+Confirmed on-chain Boxes Sold: 500
+Final Boxes Sold: 500

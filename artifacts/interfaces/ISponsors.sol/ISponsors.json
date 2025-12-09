@@ -1,0 +1,299 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ISponsors",
+  "sourceName": "interfaces/ISponsors.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "AccountActivated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sponsor",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "lottery",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "numberBoxes",
+          "type": "uint128"
+        }
+      ],
+      "name": "AccountRegisteredWithLottery",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sponsor",
+          "type": "address"
+        }
+      ],
+      "name": "AccountRegisteredWithoutLottery",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        }
+      ],
+      "name": "accountWithMaxActivatedSponsors",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "activateAccount",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "activatedSponsors",
+      "outputs": [
+        {
+          "internalType": "address[2]",
+          "name": "",
+          "type": "address[2]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_buyer",
+          "type": "address"
+        }
+      ],
+      "name": "buyerSponsors",
+      "outputs": [
+        {
+          "internalType": "address[3]",
+          "name": "",
+          "type": "address[3]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "checkActive",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "numAccountsSponsored",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "numActivatedAccountsSponsored",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_buyer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_sponsor",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "uint128",
+          "name": "p_numberBoxes",
+          "type": "uint128"
+        }
+      ],
+      "name": "registerAccountWithLottery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_sponsor",
+          "type": "address"
+        }
+      ],
+      "name": "registerAccountWithoutLottery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_factoryContract",
+          "type": "address"
+        }
+      ],
+      "name": "setFactoryContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "sponsors",
+      "outputs": [
+        {
+          "internalType": "address[2]",
+          "name": "",
+          "type": "address[2]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

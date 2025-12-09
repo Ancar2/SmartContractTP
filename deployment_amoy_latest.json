@@ -1,0 +1,19 @@
+{
+  "network": "polygon_amoy",
+  "timestamp": "2025-12-09T03:46:32.425Z",
+  "deployer": "0x5B73375A952Ac9Ef19983f3D4F81263B67488C51",
+  "contracts": {
+    "sponsors": {
+      "proxy": "0x537f0E3593693E41481d921C0a7546f12a2ca874",
+      "implementation": "0xf41c8FFdbC13b6F672eb3332634c4BE6A59C8CFB"
+    },
+    "middleware": {
+      "proxy": "0x3c58A7fC3bfaC40Cc34BE02766D6E39f917ed0cb",
+      "implementation": "0x850149e6FEe12Ce0E105490Ab37c1DCd51245fCb"
+    },
+    "factory": {
+      "proxy": "0x971eD8Db6e6d002c38AEfF46F273e8f9961aA013",
+      "implementation": "0x96A2c59f83b2200E150439435D37d5D028B4a755"
+    }
+  }
+}

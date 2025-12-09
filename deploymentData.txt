@@ -1,0 +1,164 @@
+> Network name:    'polygon_amoy'
+> Network id:      80002
+> Block gas limit: 28764776 (0x1b6ea68)
+
+
+1_deploy_contracts.js
+=====================
+
+   Deploying 'LotteryFactoryMiddleware'
+   ------------------------------------
+   > transaction hash:    0xa7195086317713598fab080ef736426d3cd7e1df0b2b426fe49f5139ae94343e
+   > Blocks: 2            Seconds: 4
+   > contract address:    0xF96d551a94aAB4dFc1061303F6B0cE1B802462dA
+   > block number:        6215737
+   > block timestamp:     1713898574
+   > account:             0x972981698DaCE1C68Fe4C6b5de8eeE9d88a2Dbd8
+   > balance:             0.14321305618887137
+   > gas used:            5177966 (0x4f026e)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01294491507766949 ETH
+
+   Pausing for 3 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 6215739)
+   > confirmation number: 4 (block: 6215741)
+
+   Deploying 'ProxyAdmin'
+   ----------------------
+   > transaction hash:    0x13a225359f090764240d5691595d4afe1b75d61b0b55e98c3ce3b249f5decce9
+   > Blocks: 1            Seconds: 4
+   > contract address:    0x1D68AC61EF451988ca5e54604e42e604629959c7
+   > block number:        6215745
+   > block timestamp:     1713898592
+   > account:             0x972981698DaCE1C68Fe4C6b5de8eeE9d88a2Dbd8
+   > balance:             0.142104833682222035
+   > gas used:            443289 (0x6c399)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.001108222506649335 ETH
+
+   Pausing for 3 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 6215747)
+   > confirmation number: 4 (block: 6215749)
+
+   Deploying 'TransparentUpgradeableProxy'
+   ---------------------------------------
+   > transaction hash:    0xb7d04399081b9f3f9ed0ed837a047cfe53fb406dfdc20aa2004f5371597d6fea
+   > Blocks: 2            Seconds: 4
+   > contract address:    0xc3a6c0809b054E53F700327Dc23338a4453D42D8
+   > block number:        6215753
+   > block timestamp:     1713898608
+   > account:             0x972981698DaCE1C68Fe4C6b5de8eeE9d88a2Dbd8
+   > balance:             0.129143663604455015
+   > gas used:            5184468 (0x4f1bd4)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01296117007776702 ETH
+
+   Pausing for 3 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 6215755)
+   > confirmation number: 4 (block: 6215757)
+
+   Deploying 'Sponsors'
+   --------------------
+   > transaction hash:    0x7f78093682328f0edd4aa3cea0c964cfafeb1c08e7782562f3d8416bc2a47bb4
+   > Blocks: 1            Seconds: 4
+   > contract address:    0x366e7B3f8eb6a77D1aE5D7962D243C72c8626aab
+   > block number:        6215761
+   > block timestamp:     1713898626
+   > account:             0x972981698DaCE1C68Fe4C6b5de8eeE9d88a2Dbd8
+   > balance:             0.12351485607068217
+   > gas used:            2251523 (0x225b03)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.005628807533772845 ETH
+
+   Pausing for 3 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 6215764)
+   > confirmation number: 4 (block: 6215766)
+
+   Deploying 'TransparentUpgradeableProxy'
+   ---------------------------------------
+   > transaction hash:    0xaa667158f840d9087d08bcf07b4e4ba14b638152aad3453c83da35ec9d2cd2c7
+   > Blocks: 2            Seconds: 4
+   > contract address:    0x0003717273534E5402Ef4233914296Eee82A686f
+   > block number:        6215769
+   > block timestamp:     1713898642
+   > account:             0x972981698DaCE1C68Fe4C6b5de8eeE9d88a2Dbd8
+   > balance:             0.121814783560481735
+   > gas used:            680029 (0xa605d)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.001700072510200435 ETH
+
+   Pausing for 3 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 6215771)
+   > confirmation number: 4 (block: 6215773)
+
+   Deploying 'LotteryFactory'
+   --------------------------
+   > transaction hash:    0x70d1cb321908cd7bd144976afacc2cd2ec1d9bff761a6b989acd79b9748736d5
+   > Blocks: 1            Seconds: 4
+   > contract address:    0x8AD08da23eE8f85828A47Db96FAcd44223f23D49
+   > block number:        6215777
+   > block timestamp:     1713898660
+   > account:             0x972981698DaCE1C68Fe4C6b5de8eeE9d88a2Dbd8
+   > balance:             0.11421582101488796
+   > gas used:            3039585 (0x2e6161)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.007598962545593775 ETH
+
+   Pausing for 3 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 6215779)
+   > confirmation number: 4 (block: 6215781)
+
+   Deploying 'TransparentUpgradeableProxy'
+   ---------------------------------------
+   > transaction hash:    0x20a1b88f3cad0042e55adaa839472c62eb99241791721e2870bae20bf7fedf61
+   > Blocks: 2            Seconds: 4
+   > contract address:    0x1B6210C9F56B8971B477e654133DB5fC716a0A2a
+   > block number:        6215785
+   > block timestamp:     1713898676
+   > account:             0x972981698DaCE1C68Fe4C6b5de8eeE9d88a2Dbd8
+   > balance:             0.112384228503898405
+   > gas used:            732637 (0xb2ddd)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.001831592510989555 ETH
+
+   Pausing for 3 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 6215787)
+   > confirmation number: 4 (block: 6215789)
+ 
+ 
+/////////////////////////////////////////////////////////////////////////////////////////
+// Addresses => NETWORK:  POLYGON_AMOY
+/////////////////////////////////////////////////////////////////////////////////////////
+ 
+LOTTERY FACTORY MIDDLEWARE PROXY => 0xc3a6c0809b054E53F700327Dc23338a4453D42D8
+SPONSORS PROXY => 0x0003717273534E5402Ef4233914296Eee82A686f
+LOTTERY FACTORY PROXY => 0x1B6210C9F56B8971B477e654133DB5fC716a0A2a
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.043773742762642455 ETH
+
+Summary
+=======
+> Total deployments:   7
+> Final cost:          0.043773742762642455 ETH

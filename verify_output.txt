@@ -1,0 +1,16 @@
+[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:
+
+sourcify: {
+  enabled: true
+}
+
+Or set 'enabled' to false to hide this message.
+
+For more information, visit https://v2.hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify
+Successfully submitted source code for contract
+contracts/LotteryFactory.sol:LotteryFactory at 0x96A2c59f83b2200E150439435D37d5D028B4a755
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract LotteryFactory on the block explorer.
+https://amoy.polygonscan.com/address/0x96A2c59f83b2200E150439435D37d5D028B4a755#code
+

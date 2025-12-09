@@ -1,0 +1,32 @@
+Compiled 2 Solidity files successfully (evm target: paris).
+Deploying contracts with the account: 0x7ad33A4078ef778e21d0311a6b0aFd3335061ae3
+Deploying Sponsors...
+Warning: A proxy admin was previously deployed on this network
+
+    This is not used with new transparent proxy deployments, since new transparent proxies deploy their own admins.
+    Changes to the previous admin will have no effect on this new proxy.
+
+Sponsors deployed to: 0x0F8aDDC3f2C3081C9065A471e2E825c7223DaBf7
+Deploying LotteryFactoryMiddleware...
+Warning: A proxy admin was previously deployed on this network
+
+    This is not used with new transparent proxy deployments, since new transparent proxies deploy their own admins.
+    Changes to the previous admin will have no effect on this new proxy.
+
+LotteryFactoryMiddleware deployed to: 0xC77d2740d11676F11DB8Fe5C97f06d28f450bd38
+Deploying LotteryFactory...
+Warning: A proxy admin was previously deployed on this network
+
+    This is not used with new transparent proxy deployments, since new transparent proxies deploy their own admins.
+    Changes to the previous admin will have no effect on this new proxy.
+
+LotteryFactory deployed to: 0x4a17Bb0db5924B762CC1f975c1C0732D34652b6D
+Linking Sponsors to Factory...
+Sponsors linked to Factory
+
+Deployment Complete!
+----------------------------------------------------
+Sponsors: 0x0F8aDDC3f2C3081C9065A471e2E825c7223DaBf7
+Middleware: 0xC77d2740d11676F11DB8Fe5C97f06d28f450bd38
+Factory: 0x4a17Bb0db5924B762CC1f975c1C0732D34652b6D
+----------------------------------------------------

@@ -1,0 +1,22 @@
+Buying boxes with account: 0x7ad33A4078ef778e21d0311a6b0aFd3335061ae3
+Initial Boxes Sold: 2
+Total Boxes: 100
+Remaining to buy: 98
+Approving tokens...
+Approved.
+Buying batch of 1...
+Tx sent: 0x16707d1ef38dfdf69584b525e2ab67e15087974eda51b4c4f33237477c461f1a
+Bought 1. Remaining: 97
+Buying batch of 1...
+Tx sent: 0x4c848e4de84c387973952c7429321dadb79daace5330efc8a146ad8e7a4f0c44
+Bought 1. Remaining: 96
+Buying batch of 5...
+Tx sent: 0x5b3b7360efa0e5f25f9b1ba6898ac464f252b4a4a8d414f01bd4e5e12d236c61
+Bought 5. Remaining: 91
+Buying batch of 20...
+Tx sent: 0x588de6cd7b595025a81aa7e72259f53afed84bfb37f78777fc9dbdc88823f96d
+Bought 20. Remaining: 71
+Buying remainder of 71...
+Tx sent: 0x90673281167ed6f1d1e467ef054e8804a36dac287f16a38beb829e74370d30aa
+Bought output remainder.
+Final Boxes Sold: 100

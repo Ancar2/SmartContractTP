@@ -1,0 +1,205 @@
+================================================================================
+CORRECCIÓN: INPUT DE PRECIO DE BOX EN FRONTEND
+================================================================================
+
+FECHA: 2025-12-08
+PROBLEMA RESUELTO: El campo de precio de box no aceptaba valores legibles por humanos
+
+================================================================================
+PROBLEMA ANTERIOR
+================================================================================
+
+El usuario tenía que ingresar el precio en la unidad más pequeña del token:
+- Para 1 token completo: tenía que escribir 1000000000000000000
+- Para 10 tokens: tenía que escribir 10000000000000000000
+- Para 100 tokens: tenía que escribir 100000000000000000000
+
+Esto era confuso y propenso a errores.
+
+
+================================================================================
+SOLUCIÓN IMPLEMENTADA
+================================================================================
+
+Ahora el usuario puede ingresar el precio en tokens completos:
+- Para 1 token: escribe "1"
+- Para 10 tokens: escribe "10"
+- Para 100 tokens: escribe "100"
+- Para 1.25 tokens: escribe "1.25"
+
+El frontend convierte automáticamente a wei (18 decimales) usando ethers.parseUnits().
+
+
+================================================================================
+EJEMPLOS DE USO
+================================================================================
+
+EJEMPLO 1: Box de 1 token
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Usuario escribe: 1
+Frontend convierte a: 1000000000000000000 (1 × 10^18)
+Contrato recibe: 1 token completo
+
+EJEMPLO 2: Box de 10 tokens
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Usuario escribe: 10
+Frontend convierte a: 10000000000000000000 (10 × 10^18)
+Contrato recibe: 10 tokens completos
+
+EJEMPLO 3: Box de 100 tokens
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Usuario escribe: 100
+Frontend convierte a: 100000000000000000000 (100 × 10^18)
+Contrato recibe: 100 tokens completos
+
+EJEMPLO 4: Box de 1.25 tokens
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Usuario escribe: 1.25
+Frontend convierte a: 1250000000000000000 (1.25 × 10^18)
+Contrato recibe: 1.25 tokens completos
+
+EJEMPLO 5: Box de 0.5 tokens
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Usuario escribe: 0.5
+Frontend convierte a: 500000000000000000 (0.5 × 10^18)
+Contrato recibe: 0.5 tokens completos
+
+
+================================================================================
+CAMBIOS REALIZADOS
+================================================================================
+
+ARCHIVO: frontend/src/app/components/admin-dashboard/admin-dashboard.ts
+
+CAMBIO 1: Actualizado el input HTML (líneas 147-151)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANTES:
+<label>Box Price (in token units)</label>
+<input type="number" [(ngModel)]="createForm.boxPrice" placeholder="1000000" step="1">
+<small>Price in smallest token unit (e.g., 1000000 for 1 USDC)</small>
+
+AHORA:
+<label>Box Price (in tokens)</label>
+<input type="number" [(ngModel)]="createForm.boxPrice" placeholder="1" step="0.01" min="0">
+<small>Enter token amount (e.g., 1 for 1 token, 10 for 10 tokens, 1.25 for 1.25 tokens)</small>
+
+
+CAMBIO 2: Actualizado valor por defecto (línea 625)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANTES:
+boxPrice: 1000000,
+
+AHORA:
+boxPrice: 1,
+
+
+CAMBIO 3: Agregada conversión automática a wei (líneas 759-761)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CÓDIGO AGREGADO:
+// Convert box price from token units to wei (18 decimals)
+const boxPriceInWei = ethers.parseUnits(this.createForm.boxPrice.toString(), 18);
+
+ANTES (línea 766):
+this.createForm.boxPrice,
+
+AHORA (línea 769):
+boxPriceInWei,
+
+
+================================================================================
+FUNCIÓN DE CONVERSIÓN
+================================================================================
+
+La conversión se realiza usando ethers.parseUnits():
+
+ethers.parseUnits(valor, decimales)
+
+PARÁMETROS:
+- valor: El número ingresado por el usuario (como string)
+- decimales: 18 (estándar ERC20)
+
+EJEMPLOS DE CONVERSIÓN:
+ethers.parseUnits("1", 18)    → "1000000000000000000"
+ethers.parseUnits("10", 18)   → "10000000000000000000"
+ethers.parseUnits("100", 18)  → "100000000000000000000"
+ethers.parseUnits("1.25", 18) → "1250000000000000000"
+ethers.parseUnits("0.5", 18)  → "500000000000000000"
+
+
+================================================================================
+VALIDACIONES
+================================================================================
+
+El input ahora tiene las siguientes validaciones:
+
+✅ type="number" - Solo acepta números
+✅ step="0.01" - Permite decimales con 2 dígitos de precisión
+✅ min="0" - No permite valores negativos
+✅ placeholder="1" - Muestra ejemplo claro
+
+
+================================================================================
+COMPATIBILIDAD
+================================================================================
+
+Esta solución funciona con CUALQUIER token ERC20 que use 18 decimales:
+- USDT (18 decimales)
+- USDC (en algunas redes usa 18 decimales)
+- DAI (18 decimales)
+- Tokens personalizados con 18 decimales
+
+NOTA: Si el token usa diferente cantidad de decimales (ej: 6 para USDC en Ethereum),
+se debe ajustar el segundo parámetro de parseUnits() al número correcto de decimales.
+
+
+================================================================================
+CÓMO USAR EN EL FRONTEND
+================================================================================
+
+1. Abrir http://localhost:4200
+2. Conectar wallet
+3. Ir a "Admin Dashboard"
+4. Seleccionar tab "Create Lottery"
+5. En el campo "Box Price (in tokens)":
+   - Escribir "1" para 1 token
+   - Escribir "10" para 10 tokens
+   - Escribir "100" para 100 tokens
+   - Escribir "1.25" para 1.25 tokens
+6. Completar los demás campos
+7. Click en "Create Lottery"
+
+El sistema automáticamente convertirá el valor a wei antes de enviarlo al contrato.
+
+
+================================================================================
+VERIFICACIÓN
+================================================================================
+
+Para verificar que funciona correctamente:
+
+1. Crear una lotería con precio de box = 1
+2. Revisar en PolygonScan la transacción de creación
+3. Ver los parámetros de la función createLottery
+4. El parámetro p_boxPrice debe mostrar: 1000000000000000000
+
+Esto confirma que la conversión se realizó correctamente.
+
+
+================================================================================
+BENEFICIOS
+================================================================================
+
+✅ Interfaz más intuitiva y fácil de usar
+✅ Reduce errores al ingresar precios
+✅ No necesita calcular manualmente los decimales
+✅ Soporta valores decimales (1.25, 0.5, etc.)
+✅ Validación automática de valores negativos
+✅ Placeholder claro con ejemplo
+
+
+================================================================================
+FIN DEL DOCUMENTO
+================================================================================

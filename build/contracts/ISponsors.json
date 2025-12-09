@@ -1,0 +1,1734 @@
+{
+  "contractName": "ISponsors",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "AccountActivated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sponsor",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "lottery",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "numberBoxes",
+          "type": "uint128"
+        }
+      ],
+      "name": "AccountRegisteredWithLottery",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sponsor",
+          "type": "address"
+        }
+      ],
+      "name": "AccountRegisteredWithoutLottery",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "sponsors",
+      "outputs": [
+        {
+          "internalType": "address[2]",
+          "name": "",
+          "type": "address[2]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "activatedSponsors",
+      "outputs": [
+        {
+          "internalType": "address[2]",
+          "name": "",
+          "type": "address[2]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_buyer",
+          "type": "address"
+        }
+      ],
+      "name": "buyerSponsors",
+      "outputs": [
+        {
+          "internalType": "address[3]",
+          "name": "",
+          "type": "address[3]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "checkActive",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        }
+      ],
+      "name": "accountWithMaxActivatedSponsors",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "numAccountsSponsored",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "numActivatedAccountsSponsored",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_factoryContract",
+          "type": "address"
+        }
+      ],
+      "name": "setFactoryContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_buyer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_sponsor",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_lottery",
+          "type": "address"
+        },
+        {
+          "internalType": "uint128",
+          "name": "p_numberBoxes",
+          "type": "uint128"
+        }
+      ],
+      "name": "registerAccountWithLottery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "p_sponsor",
+          "type": "address"
+        }
+      ],
+      "name": "registerAccountWithoutLottery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_account",
+          "type": "address"
+        }
+      ],
+      "name": "activateAccount",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AccountActivated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sponsor\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"lottery\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint128\",\"name\":\"numberBoxes\",\"type\":\"uint128\"}],\"name\":\"AccountRegisteredWithLottery\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sponsor\",\"type\":\"address\"}],\"name\":\"AccountRegisteredWithoutLottery\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_lottery\",\"type\":\"address\"}],\"name\":\"accountWithMaxActivatedSponsors\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_account\",\"type\":\"address\"}],\"name\":\"activateAccount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_lottery\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"p_account\",\"type\":\"address\"}],\"name\":\"activatedSponsors\",\"outputs\":[{\"internalType\":\"address[2]\",\"name\":\"\",\"type\":\"address[2]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_lottery\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"p_buyer\",\"type\":\"address\"}],\"name\":\"buyerSponsors\",\"outputs\":[{\"internalType\":\"address[3]\",\"name\":\"\",\"type\":\"address[3]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_lottery\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"p_account\",\"type\":\"address\"}],\"name\":\"checkActive\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_account\",\"type\":\"address\"}],\"name\":\"numAccountsSponsored\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_lottery\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"p_account\",\"type\":\"address\"}],\"name\":\"numActivatedAccountsSponsored\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_buyer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"p_sponsor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"p_lottery\",\"type\":\"address\"},{\"internalType\":\"uint128\",\"name\":\"p_numberBoxes\",\"type\":\"uint128\"}],\"name\":\"registerAccountWithLottery\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"p_sponsor\",\"type\":\"address\"}],\"name\":\"registerAccountWithoutLottery\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_factoryContract\",\"type\":\"address\"}],\"name\":\"setFactoryContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"p_account\",\"type\":\"address\"}],\"name\":\"sponsors\",\"outputs\":[{\"internalType\":\"address[2]\",\"name\":\"\",\"type\":\"address[2]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/interfaces/ISponsors.sol\":\"ISponsors\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/interfaces/ISponsors.sol\":{\"keccak256\":\"0x864fd56d78a3fb25a89e33a43c27b21702351db83e2131f4f3aa370df660a71f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cf973669603471d013d3f8162f689732e1ab38cd32957f5ff282d1d3eb42efe9\",\"dweb:/ipfs/QmesRq79ExCDEEZf4Tgo89C4azjHGjFG8VnNxYAfhtezjX\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ninterface ISponsors {\n    // STRUCTS\n    \n    // EVENTS\n\n        event AccountRegisteredWithLottery(address indexed account, address indexed sponsor, address indexed lottery, uint128 numberBoxes);\n        event AccountRegisteredWithoutLottery(address indexed account, address indexed sponsor);\n        event AccountActivated(address indexed account);\n\n    // VIEW FUNCTIONS\n\n        function sponsors(address p_account) external view returns(address[2] memory);\n        function activatedSponsors(address p_lottery, address p_account) external view returns(address[2] memory);\n        function buyerSponsors(address p_lottery, address p_buyer) external view returns(address[3] memory);\n        function checkActive(address p_lottery, address p_account) external view returns(bool);\n        function accountWithMaxActivatedSponsors(address p_lottery) external view returns(address);\n        function numAccountsSponsored(address p_account) external view returns(uint256);\n        function numActivatedAccountsSponsored(address p_lottery, address p_account) external view returns(uint256);\n\n    // SET FUNCTIONS\n\n        function setFactoryContract(address p_factoryContract) external;\n        function registerAccountWithLottery(address p_buyer, address p_sponsor, address p_lottery, uint128 p_numberBoxes) external;\n        function registerAccountWithoutLottery(address p_account, address p_sponsor) external;\n        function activateAccount(address p_account) external;\n} ",
+  "sourcePath": "/Users/johancard/Downloads/Copia de lottery-main 4/interfaces/ISponsors.sol",
+  "ast": {
+    "absolutePath": "project:/interfaces/ISponsors.sol",
+    "exportedSymbols": {
+      "ISponsors": [
+        11230
+      ]
+    },
+    "id": 11231,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11118,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".20"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:33"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ISponsors",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 11230,
+        "linearizedBaseContracts": [
+          11230
+        ],
+        "name": "ISponsors",
+        "nameLocation": "68:9:33",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "eventSelector": "f77ceda10f93abd95675fa79d02385eba732321550762a4b7d3a796cd0d203da",
+            "id": 11128,
+            "name": "AccountRegisteredWithLottery",
+            "nameLocation": "129:28:33",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11127,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11120,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "174:7:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11128,
+                  "src": "158:23:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11119,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "158:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11122,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sponsor",
+                  "nameLocation": "199:7:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11128,
+                  "src": "183:23:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11121,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "183:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11124,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "lottery",
+                  "nameLocation": "224:7:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11128,
+                  "src": "208:23:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11123,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "208:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11126,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "numberBoxes",
+                  "nameLocation": "241:11:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11128,
+                  "src": "233:19:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 11125,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "233:7:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "157:96:33"
+            },
+            "src": "123:131:33"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "17bda83332f1264286fc804f00d91fb81fe54254a537f8fe83b9d82fbbc54ea9",
+            "id": 11134,
+            "name": "AccountRegisteredWithoutLottery",
+            "nameLocation": "269:31:33",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11133,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11130,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "317:7:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11134,
+                  "src": "301:23:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11129,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "301:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11132,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sponsor",
+                  "nameLocation": "342:7:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11134,
+                  "src": "326:23:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11131,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "326:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "300:50:33"
+            },
+            "src": "263:88:33"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "cfacdcf9289f1b69c533dda67fc14bae036114cd912d8f9fa9676e95d4ec0284",
+            "id": 11138,
+            "name": "AccountActivated",
+            "nameLocation": "366:16:33",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11137,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11136,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "399:7:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11138,
+                  "src": "383:23:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11135,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "383:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "382:25:33"
+            },
+            "src": "360:48:33"
+          },
+          {
+            "functionSelector": "d35590c2",
+            "id": 11147,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sponsors",
+            "nameLocation": "450:8:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11141,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11140,
+                  "mutability": "mutable",
+                  "name": "p_account",
+                  "nameLocation": "467:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11147,
+                  "src": "459:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11139,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "459:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "458:19:33"
+            },
+            "returnParameters": {
+              "id": 11146,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11145,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11147,
+                  "src": "500:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$2_memory_ptr",
+                    "typeString": "address[2]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 11142,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "500:7:33",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 11144,
+                    "length": {
+                      "hexValue": "32",
+                      "id": 11143,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "508:1:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_2_by_1",
+                        "typeString": "int_const 2"
+                      },
+                      "value": "2"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "500:10:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$2_storage_ptr",
+                      "typeString": "address[2]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "499:19:33"
+            },
+            "scope": 11230,
+            "src": "441:78:33",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "e623c82e",
+            "id": 11158,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "activatedSponsors",
+            "nameLocation": "537:17:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11152,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11149,
+                  "mutability": "mutable",
+                  "name": "p_lottery",
+                  "nameLocation": "563:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11158,
+                  "src": "555:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11148,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "555:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11151,
+                  "mutability": "mutable",
+                  "name": "p_account",
+                  "nameLocation": "582:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11158,
+                  "src": "574:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11150,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "574:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "554:38:33"
+            },
+            "returnParameters": {
+              "id": 11157,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11156,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11158,
+                  "src": "615:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$2_memory_ptr",
+                    "typeString": "address[2]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 11153,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "615:7:33",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 11155,
+                    "length": {
+                      "hexValue": "32",
+                      "id": 11154,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "623:1:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_2_by_1",
+                        "typeString": "int_const 2"
+                      },
+                      "value": "2"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "615:10:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$2_storage_ptr",
+                      "typeString": "address[2]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "614:19:33"
+            },
+            "scope": 11230,
+            "src": "528:106:33",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "e0632726",
+            "id": 11169,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "buyerSponsors",
+            "nameLocation": "652:13:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11160,
+                  "mutability": "mutable",
+                  "name": "p_lottery",
+                  "nameLocation": "674:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11169,
+                  "src": "666:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11159,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "666:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11162,
+                  "mutability": "mutable",
+                  "name": "p_buyer",
+                  "nameLocation": "693:7:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11169,
+                  "src": "685:15:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11161,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "685:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "665:36:33"
+            },
+            "returnParameters": {
+              "id": 11168,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11167,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11169,
+                  "src": "724:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$3_memory_ptr",
+                    "typeString": "address[3]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 11164,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "724:7:33",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 11166,
+                    "length": {
+                      "hexValue": "33",
+                      "id": 11165,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "732:1:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_3_by_1",
+                        "typeString": "int_const 3"
+                      },
+                      "value": "3"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "724:10:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$3_storage_ptr",
+                      "typeString": "address[3]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "723:19:33"
+            },
+            "scope": 11230,
+            "src": "643:100:33",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "20d32457",
+            "id": 11178,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkActive",
+            "nameLocation": "761:11:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11174,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11171,
+                  "mutability": "mutable",
+                  "name": "p_lottery",
+                  "nameLocation": "781:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11178,
+                  "src": "773:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11170,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "773:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11173,
+                  "mutability": "mutable",
+                  "name": "p_account",
+                  "nameLocation": "800:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11178,
+                  "src": "792:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11172,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "792:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "772:38:33"
+            },
+            "returnParameters": {
+              "id": 11177,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11176,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11178,
+                  "src": "833:4:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 11175,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "833:4:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "832:6:33"
+            },
+            "scope": 11230,
+            "src": "752:87:33",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "44128e7e",
+            "id": 11185,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "accountWithMaxActivatedSponsors",
+            "nameLocation": "857:31:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11181,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11180,
+                  "mutability": "mutable",
+                  "name": "p_lottery",
+                  "nameLocation": "897:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11185,
+                  "src": "889:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11179,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "889:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "888:19:33"
+            },
+            "returnParameters": {
+              "id": 11184,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11183,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11185,
+                  "src": "930:7:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11182,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "930:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "929:9:33"
+            },
+            "scope": 11230,
+            "src": "848:91:33",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "64f4e1bf",
+            "id": 11192,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "numAccountsSponsored",
+            "nameLocation": "957:20:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11188,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11187,
+                  "mutability": "mutable",
+                  "name": "p_account",
+                  "nameLocation": "986:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11192,
+                  "src": "978:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11186,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "978:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "977:19:33"
+            },
+            "returnParameters": {
+              "id": 11191,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11190,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11192,
+                  "src": "1019:7:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11189,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1019:7:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1018:9:33"
+            },
+            "scope": 11230,
+            "src": "948:80:33",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "6da3f170",
+            "id": 11201,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "numActivatedAccountsSponsored",
+            "nameLocation": "1046:29:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11197,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11194,
+                  "mutability": "mutable",
+                  "name": "p_lottery",
+                  "nameLocation": "1084:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11201,
+                  "src": "1076:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11193,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1076:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11196,
+                  "mutability": "mutable",
+                  "name": "p_account",
+                  "nameLocation": "1103:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11201,
+                  "src": "1095:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11195,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1095:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1075:38:33"
+            },
+            "returnParameters": {
+              "id": 11200,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11199,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11201,
+                  "src": "1136:7:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11198,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1136:7:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1135:9:33"
+            },
+            "scope": 11230,
+            "src": "1037:108:33",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "d4241341",
+            "id": 11206,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setFactoryContract",
+            "nameLocation": "1186:18:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11204,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11203,
+                  "mutability": "mutable",
+                  "name": "p_factoryContract",
+                  "nameLocation": "1213:17:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11206,
+                  "src": "1205:25:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11202,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1205:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1204:27:33"
+            },
+            "returnParameters": {
+              "id": 11205,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1240:0:33"
+            },
+            "scope": 11230,
+            "src": "1177:64:33",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "8c50e466",
+            "id": 11217,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerAccountWithLottery",
+            "nameLocation": "1259:26:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11215,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11208,
+                  "mutability": "mutable",
+                  "name": "p_buyer",
+                  "nameLocation": "1294:7:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11217,
+                  "src": "1286:15:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11207,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1286:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11210,
+                  "mutability": "mutable",
+                  "name": "p_sponsor",
+                  "nameLocation": "1311:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11217,
+                  "src": "1303:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11209,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1303:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11212,
+                  "mutability": "mutable",
+                  "name": "p_lottery",
+                  "nameLocation": "1330:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11217,
+                  "src": "1322:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11211,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1322:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11214,
+                  "mutability": "mutable",
+                  "name": "p_numberBoxes",
+                  "nameLocation": "1349:13:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11217,
+                  "src": "1341:21:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 11213,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1341:7:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1285:78:33"
+            },
+            "returnParameters": {
+              "id": 11216,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1372:0:33"
+            },
+            "scope": 11230,
+            "src": "1250:123:33",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "953bde31",
+            "id": 11224,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerAccountWithoutLottery",
+            "nameLocation": "1391:29:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11222,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11219,
+                  "mutability": "mutable",
+                  "name": "p_account",
+                  "nameLocation": "1429:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11224,
+                  "src": "1421:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11218,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1421:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11221,
+                  "mutability": "mutable",
+                  "name": "p_sponsor",
+                  "nameLocation": "1448:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11224,
+                  "src": "1440:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11220,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1440:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1420:38:33"
+            },
+            "returnParameters": {
+              "id": 11223,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1467:0:33"
+            },
+            "scope": 11230,
+            "src": "1382:86:33",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "82a62137",
+            "id": 11229,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "activateAccount",
+            "nameLocation": "1486:15:33",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11227,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11226,
+                  "mutability": "mutable",
+                  "name": "p_account",
+                  "nameLocation": "1510:9:33",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11229,
+                  "src": "1502:17:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11225,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1502:7:33",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1501:19:33"
+            },
+            "returnParameters": {
+              "id": 11228,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1529:0:33"
+            },
+            "scope": 11230,
+            "src": "1477:53:33",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11231,
+        "src": "58:1474:33",
+        "usedErrors": [],
+        "usedEvents": [
+          11128,
+          11134,
+          11138
+        ]
+      }
+    ],
+    "src": "32:1501:33"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.21+commit.d9974bed.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2025-12-08T18:57:55.116Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

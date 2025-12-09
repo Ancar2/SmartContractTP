@@ -1,0 +1,31 @@
+Deploying contracts with the account: 0x7ad33A4078ef778e21d0311a6b0aFd3335061ae3
+Deploying Sponsors...
+Warning: A proxy admin was previously deployed on this network
+
+    This is not used with new transparent proxy deployments, since new transparent proxies deploy their own admins.
+    Changes to the previous admin will have no effect on this new proxy.
+
+Sponsors deployed to: 0xF632AB8c0e6dc100458C7b9DF721851DE773602a
+Deploying LotteryFactoryMiddleware...
+Warning: A proxy admin was previously deployed on this network
+
+    This is not used with new transparent proxy deployments, since new transparent proxies deploy their own admins.
+    Changes to the previous admin will have no effect on this new proxy.
+
+LotteryFactoryMiddleware deployed to: 0xe8E3dDdFe449714b9DA9B5E3FE36424413CEDdA4
+Deploying LotteryFactory...
+Warning: A proxy admin was previously deployed on this network
+
+    This is not used with new transparent proxy deployments, since new transparent proxies deploy their own admins.
+    Changes to the previous admin will have no effect on this new proxy.
+
+LotteryFactory deployed to: 0xe35b6A5290860646D711BBc8632e9f4BECFA19cF
+Linking Sponsors to Factory...
+Sponsors linked to Factory
+
+Deployment Complete!
+----------------------------------------------------
+Sponsors: 0xF632AB8c0e6dc100458C7b9DF721851DE773602a
+Middleware: 0xe8E3dDdFe449714b9DA9B5E3FE36424413CEDdA4
+Factory: 0xe35b6A5290860646D711BBc8632e9f4BECFA19cF
+----------------------------------------------------

@@ -1,0 +1,363 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ILottery",
+  "sourceName": "interfaces/ILottery.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "e_buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "e_numberBoxes",
+          "type": "uint128"
+        }
+      ],
+      "name": "BuyBoxes",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "e_winningNumber",
+          "type": "uint128"
+        }
+      ],
+      "name": "SetWinning",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "e_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "e_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "WithdrawBalance",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint128",
+          "name": "p_numberBoxes",
+          "type": "uint128"
+        },
+        {
+          "internalType": "address",
+          "name": "p_buyer",
+          "type": "address"
+        }
+      ],
+      "name": "buyBoxes",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "completed",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "infoIncentiveMaxBuyer",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint128",
+              "name": "boxes1",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "percentage1",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "boxes2",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "percentage2",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "boxes3",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "percentage3",
+              "type": "uint128"
+            }
+          ],
+          "internalType": "struct ILottery.IncentiveMaxBuyer",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "infoLottery",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "stableCoin",
+              "type": "address"
+            },
+            {
+              "internalType": "uint128",
+              "name": "boxPrice",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "boxesSold",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "totalBoxes",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "winningNumber",
+              "type": "uint128"
+            }
+          ],
+          "internalType": "struct ILottery.LoterryInfo",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "p_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "p_symbol",
+          "type": "string"
+        },
+        {
+          "internalType": "uint128",
+          "name": "p_totalBoxes",
+          "type": "uint128"
+        },
+        {
+          "internalType": "address",
+          "name": "p_stableCoin",
+          "type": "address"
+        },
+        {
+          "internalType": "uint128",
+          "name": "p_boxPrice",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint256",
+          "name": "p_percentageWinner",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "p_percentageSponsorWinner",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint128",
+              "name": "boxes1",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "percentage1",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "boxes2",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "percentage2",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "boxes3",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "percentage3",
+              "type": "uint128"
+            }
+          ],
+          "internalType": "struct ILottery.IncentiveMaxBuyer",
+          "name": "p_incentiveMaxBuyer",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "p_incentivePercentageMaxSponsors",
+          "type": "uint256"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint128",
+          "name": "p_winningNumber",
+          "type": "uint128"
+        }
+      ],
+      "name": "setWinning",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ticketAccountWinner",
+      "outputs": [
+        {
+          "internalType": "uint128",
+          "name": "",
+          "type": "uint128"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint128",
+          "name": "p_ticket",
+          "type": "uint128"
+        }
+      ],
+      "name": "ticketToBox",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "p_boxId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ticketsBox",
+      "outputs": [
+        {
+          "internalType": "uint128",
+          "name": "",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint128",
+          "name": "",
+          "type": "uint128"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "topBuyer",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "p_address",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawBalance",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,16 @@
+Interacting with contracts using account: 0x7ad33A4078ef778e21d0311a6b0aFd3335061ae3
+Deploying Mock Contract for Stablecoin...
+Mock Stablecoin deployed to: 0x477B112D353e91A15A2AF9646fEb447B9aEA4bA9
+Minted 10000 TST to deployer
+Creating Lottery...
+Create Lottery Tx sent: 0x204a67055514e64996b6b26bc441902376be99ddd1fc2c5b1bdeb18e8bf43f8e
+Lottery Created!
+New Lottery Address: 0xa07a10aa52592bcD4b9bd734E38f02470304F6df
+Approving Lottery to spend TST...
+Approved!
+Registering deployer with root sponsor...
+Deployer registered!
+Buying 2 boxes...
+Buy Boxes Tx sent: 0x29666f3395fa53fa907f9e419922d3e553d4c295676abc8731a02c5e6d2dbd18
+Boxes Bought!
+Boxes Sold: 2

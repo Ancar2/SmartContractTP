@@ -1,0 +1,19 @@
+Starting Stress Test with account: 0x7ad33A4078ef778e21d0311a6b0aFd3335061ae3
+Deploying Mock Stablecoin...
+StressToken deployed to: 0xA2C2FfCfeb19fD9cb55Ae20FFA159a6327eacf96
+Minted tokens for 500 boxes.
+Creating 500-box Lottery...
+Lottery created at: 0x941677B04b792069273978166cA6fEed43D30a9A
+Registering deployer...
+Approving tokens...
+Approved.
+
+--- Requesting 100 boxes ---
+Executing sub-batch of 100...
+Tx hash: 0xe1269a5336be720b1d9ac3487d1f5d54f4215451b74e66f420cc9055f96c9979
+Sub-batch done. Total sold: 100
+Contract confirms boxes sold: 100
+
+--- Requesting 200 boxes ---
+Executing sub-batch of 100...
+Error buying batch: insufficient funds for gas * price + value: balance 263487026863878554, tx cost 704271274348968520, overshot 440784247485089966
