@@ -1,7 +1,0 @@
-Buying remaining boxes with account: 0x7ad33A4078ef778e21d0311a6b0aFd3335061ae3
-Initial Boxes Sold: 97
-Total Boxes: 100
-Remaining to buy: 3
-Buying 1 box (Final push)...
-Failed (Final push): insufficient funds for gas * price + value: balance 139508118899978586, tx cost 1213700001975000000, overshot 1074191883075021414
-Final Boxes Sold: 97

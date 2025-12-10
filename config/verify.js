@@ -47,9 +47,9 @@ async function verifyProxy(name, proxyAddress) {
 
 async function main() {
     const proxies = {
-        Middleware: "0x3c58A7fC3bfaC40Cc34BE02766D6E39f917ed0cb",
-        Sponsors: "0x537f0E3593693E41481d921C0a7546f12a2ca874",
-        Factory: "0x971eD8Db6e6d002c38AEfF46F273e8f9961aA013",
+        Middleware: "0xB673A4C30A1003E74763cD3B378b1308608b9A00",
+        Sponsors: "0x3F2178E0EF9f9D8FdFe819d30C47639333A246AB",
+        Factory: "0x61aB8B0B3112D9f7065Ee317a5C477927d0EEC57",
     };
 
     for (const [name, proxyAddress] of Object.entries(proxies)) {

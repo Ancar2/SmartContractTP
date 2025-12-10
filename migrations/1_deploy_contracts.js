@@ -4,7 +4,7 @@ const LotteryFactory = artifacts.require('LotteryFactory');
 const LotteryFactoryMiddleware = artifacts.require('LotteryFactoryMiddleware');
 const Sponsors = artifacts.require('Sponsors');
 
-const OWNER = "0x5b73375a952ac9ef19983f3d4f81263b67488c51"
+const OWNER = "0x5B73375A952Ac9Ef19983f3D4F81263B67488C51"
 
 module.exports = async (deployer, network, accounts) => {
     /////// LOTTERY FACTORY MIDDLEWARE CONTRACT ///////
